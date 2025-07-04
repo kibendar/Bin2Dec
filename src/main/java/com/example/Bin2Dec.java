@@ -38,8 +38,8 @@ public class Bin2Dec {
 
             // Check for maximum length (32-bit integer)
             if (binaryString.length() > 32) {
-                System.out.println("Warning: Input exceeds 32 bits. Result may be inaccurate");
-                // Continue processing but result might overflow
+                System.out.println("Warning: Input exceeds 32 bits. Result may be inaccurate. Please enter a binary number with up to 32 bits.");
+                return;
             }
 
             // Convert binary string to decimal manually
