@@ -25,16 +25,6 @@ public class Bin2Dec {
                     return;
                 }
             }
-
-            int decimal = 0;
-            for (int i = 0; i < binaryString.length(); i++) {
-                if (binaryString.charAt(i) == '1') {
-                    decimal += 1 << (binaryString.length() - 1 - i);
-                }
-            }
-
-            System.out.println("Binary: " + binaryString);
-            System.out.println("Decimal: " + decimal);
         }
     }
 }
