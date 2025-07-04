@@ -14,7 +14,7 @@ public class Bin2Dec {
                 if (input.isEmpty()) {
                     break;
                 }
-                // Проверка, что только 0 и 1
+
                 boolean isBinary = true;
                 for (int i = 0; i < input.length(); i++) {
                     char c = input.charAt(i);
@@ -33,6 +33,7 @@ public class Bin2Dec {
                 result += input;
                 count++;
             }
+            // System.out.println("Result: " + result);
         }
     }
 }
