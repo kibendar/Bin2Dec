@@ -1,57 +1,78 @@
+/**
+ * Binary to Decimal Converter (Bin2Dec)
+ * 
+ * A simple console application that converts binary numbers to their decimal equivalents.
+ * 
+ * Features:
+ * - Accepts up to 8 binary inputs per session
+ * - Validates input to ensure only 0s and 1s are accepted
+ * - Provides clear examples of valid input format
+ * - Allows early exit by pressing Enter without input
+ * - Displays conversion summary at the end
+ * 
+ * Usage:
+ * 1. Run the program
+ * 2. Enter binary numbers when prompted (for example; 1010)
+ * 3. Press Enter to finish early or continue until 8 numbers
+ * 4. View conversion summary
+ * 
+ * Note: Uses try-with-resources for proper resource management
+ */
 package com.example;
 
 import java.util.Scanner;
 
 public class Bin2Dec {
     public static void main(String[] args) {
-        // Используем try-with-resources для автоматического закрытия Scanner
-        // Это гарантирует освобождение ресурсов даже при возникновении исключений
+        // Using try-with-resources to automatically close Scanner
+        // Ensures resources are released even if exceptions occur
         try (Scanner scanner = new Scanner(System.in)) {
-            // Блок приветствия и инструкций для пользователя
+            // Welcome message and instructions for the user
             System.out.println("\n=== Binary to Decimal Converter ===");
             System.out.println("Examples of valid inputs: '1010' (equals 10), '1111' (equals 15)");
             System.out.println("You can convert up to 8 numbers in one session");
             System.out.println("(Press ENTER without typing to exit early)\n");
             System.out.println("Enter a binary number (0s and 1s only), (like 1010): ");
-            // Счетчик успешно конвертированных чисел
-            // Хранит количество корректных вводов пользователя
+            
+            // Counter for successfully converted numbers
+            // Tracks the number of valid user inputs
             int count = 0;
             
-            // Основной цикл обработки ввода
-            // Максимальное количество итераций - 8
+            // Main input processing loop
+            // Maximum of 8 iterations
             while (count < 8) {
-                // Запрос ввода с порядковым номером и номером текущего числа
-                // Используем count для отображения номера текущего числа
-                // Добавляем 1 к счетчику, чтобы начать с 1 потому что пользователю удобнее видеть нумерацию с 1
+                // Prompt with current number position
+                // Using count to display current number
+                // Adding 1 to start numbering from 1 (more user-friendly)
                 System.out.print("\nBinary number " + (count+1) + "/8: ");
                 
-                // Чтение и очистка ввода:
-                // nextLine() - читает всю строку
-                // trim() - удаляет пробелы в начале и конце
+                // Reading and cleaning input:
+                // nextLine() - reads the entire line
+                // trim() - removes leading/trailing whitespace
                 String input = scanner.nextLine().trim();
 
-                // Проверка на досрочное завершение ввода
-                // Если пользователь просто нажал Enter
+                // Check for early exit request
+                // If user just pressed Enter
                 if (input.isEmpty()) {
                     System.out.println("\nFinished. Thank you!");
-                    break; // Выход из цикла
+                    break; // Exit the loop
                 }
-                // Увеличение счетчика успешных конвертаций
-                // Инкремент происходит только после успешной обработки числа
+                // Increment successful conversion counter
+                // Only increases after successful number processing
                 count++;
             }
 
-            // Блок итоговой статистики:
-            // Выводится после завершения цикла ввода
+            // Session summary block:
+            // Displayed after input loop completes
             if (count > 0) {
                 System.out.println("\nSummary: Converted " + count + " numbers");
             } else {
                 System.out.println("\nNo numbers were converted");
             }
             
-            // Для разработчиков: точка завершения программы
-            // System.out.println("[DEBUG] Программа завершена успешно");
+            // For developers: program completion point
+            // System.out.println("[DEBUG] Program completed successfully");
         }
-        // Scanner автоматически закрывается благодаря try-with-resources
+        // Scanner automatically closes thanks to try-with-resources
     }
 }
