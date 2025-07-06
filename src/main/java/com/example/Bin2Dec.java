@@ -26,6 +26,8 @@ public class Bin2Dec {
     public static void main(String[] args) {
         // Using try-with-resources to automatically close Scanner
         // Ensures resources are released even if exceptions occur
+        Validator validator = new Validator();
+
         try (Scanner scanner = new Scanner(System.in)) {
             // Welcome message and instructions for the user
             System.out.println("\n=== Binary to Decimal Converter ===");
@@ -33,46 +35,29 @@ public class Bin2Dec {
             System.out.println("You can convert up to 8 numbers in one session");
             System.out.println("(Press ENTER without typing to exit early)\n");
             System.out.println("Enter a binary number (0s and 1s only), (like 1010): ");
-            
-            // Counter for successfully converted numbers
-            // Tracks the number of valid user inputs
+
             int count = 0;
-            
-            // Main input processing loop
-            // Maximum of 8 iterations
+
             while (count < 8) {
-                // Prompt with current number position
-                // Using count to display current number
-                // Adding 1 to start numbering from 1 (more user-friendly)
+
                 System.out.print("\nBinary number " + (count+1) + "/8: ");
-                
-                // Reading and cleaning input:
-                // nextLine() - reads the entire line
-                // trim() - removes leading/trailing whitespace
                 String input = scanner.nextLine().trim();
 
-                // Check for early exit request
-                // If user just pressed Enter
-                if (input.isEmpty()) {
-                    System.out.println("\nFinished. Thank you!");
-                    break; // Exit the loop
+                if (validator.validateByEmpty(input)) {
+                    System.out.println("ERROR: Your number is empty, please write 0 or 1");
+                    break;
                 }
-                // Increment successful conversion counter
-                // Only increases after successful number processing
+                if (validator.validateByNumber(input)) {
+                    System.out.println("ERROR: Invalid binary number, please write a valid binary number (0 or 1)");
+                    break;
+                }
                 count++;
             }
 
-            // Session summary block:
-            // Displayed after input loop completes
             if (count > 0) {
                 System.out.println("\nSummary: Converted " + count + " numbers");
-            } else {
-                System.out.println("\nNo numbers were converted");
             }
             
-            // For developers: program completion point
-            // System.out.println("[DEBUG] Program completed successfully");
         }
-        // Scanner automatically closes thanks to try-with-resources
     }
 }
