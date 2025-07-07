@@ -44,15 +44,15 @@ public class Bin2Dec {
                 String input = scanner.nextLine().trim();
 
                 if (validator.validateByEmpty(input)) {
-                    break;
+                    continue;
                 }
 
                 if (validator.validateByString(input)) {
-                    break;
+                    continue;
                 }
 
                 if (validator.validateByNumber(input)) {
-                    break;
+                    continue;
                 }
 
                 count++;
