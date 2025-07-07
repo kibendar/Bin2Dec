@@ -36,7 +36,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.Bin2Dec</mainClass>
+                            <mainClass>com.example.Bin2DecApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
