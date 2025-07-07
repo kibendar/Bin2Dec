@@ -1,21 +1,21 @@
 /**
  * Binary to Decimal Converter (Bin2Dec)
- * 
+ * <p>
  * A simple console application that converts binary numbers to their decimal equivalents.
- * 
+ * <p>
  * Features:
  * - Accepts up to 8 binary inputs per session
  * - Validates input to ensure only 0s and 1s are accepted
  * - Provides clear examples of valid input format
  * - Allows early exit by pressing Enter without input
  * - Displays conversion summary at the end
- * 
+ * <p>
  * Usage:
  * 1. Run the program
  * 2. Enter binary numbers when prompted (for example; 1010)
  * 3. Press Enter to finish early or continue until 8 numbers
  * 4. View conversion summary
- * 
+ * <p>
  * Note: Uses try-with-resources for proper resource management
  */
 package com.example;
@@ -40,24 +40,28 @@ public class Bin2Dec {
 
             while (count < 8) {
 
-                System.out.print("\nBinary number " + (count+1) + "/8: ");
+                System.out.print("\nBinary number " + (count + 1) + "/8: ");
                 String input = scanner.nextLine().trim();
 
                 if (validator.validateByEmpty(input)) {
-                    System.out.println("ERROR: Your number is empty, please write 0 or 1");
                     break;
                 }
+
+                if (validator.validateByString(input)) {
+                    break;
+                }
+
                 if (validator.validateByNumber(input)) {
-                    System.out.println("ERROR: Invalid binary number, please write a valid binary number (0 or 1)");
                     break;
                 }
+
                 count++;
             }
 
             if (count > 0) {
                 System.out.println("\nSummary: Converted " + count + " numbers");
             }
-            
+
         }
     }
 }
