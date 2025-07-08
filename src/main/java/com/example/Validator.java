@@ -2,9 +2,13 @@ package com.example;
 
 public class Validator {
 
+
+    private final String RED = "\u001B[31m";
+    private final String RESET = "\u001B[0m";
+
     public boolean validateByEmpty(String input) {     //Validate input if null
         if (input == null || input.isEmpty()) {
-            System.out.println("ERROR: Your number is empty, please write 0 or 1");
+            System.out.println(RED + "ERROR: Your number is empty, please write 0 or 1" + RESET);
             return true;
         } else {  // if user write normal number - program work is normal
             return false;
@@ -12,8 +16,8 @@ public class Validator {
     }
 
     public boolean validateByNumber(String input) {  //Validate input for number
-        if ((!input.equals("1")) && (!input.equals("0")) ) {
-            System.out.println("ERROR: Invalid binary number, please write a valid binary number (0 or 1)");
+        if ((!input.equals("1")) && (!input.equals("0"))) {
+            System.out.println(RED + "ERROR: Invalid binary number, please write a valid binary number (0 or 1)" + RESET);
             return true;
         } else { // if user write 1 or 0, all normal
             return false;
@@ -21,15 +25,15 @@ public class Validator {
     }
 
     public boolean validateByString(String input) {
-        if(!input.matches("\\d+")){
-            System.out.println("ERROR: You should write the numbers 0 and 1, not string or characters");
+        if (!input.matches("\\d+")) {
+            System.out.println(RED + "ERROR: You should write the numbers 0 and 1, not string or characters" + RESET);
             return true;
-        }else {
+        } else {
             return false;
         }
     }
 
-    public boolean validateIf(String input){
+    public boolean validateIf(String input) {
 
         if (validateByEmpty(input)) {
             return true;
@@ -43,7 +47,6 @@ public class Validator {
         }
         return false;
     }
-
 
 
 }
