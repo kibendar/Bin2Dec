@@ -30,13 +30,15 @@ public class Validator {
     }
 
     public boolean validateIf(String input){
+
         if (validateByEmpty(input)) {
             return true;
         }
-        if (validateByNumber(input)) {
+
+        if (validateByString(input)) {
             return true;
         }
-        if (validateByString(input)) {
+        if (validateByNumber(input)) {
             return true;
         }
         return false;
