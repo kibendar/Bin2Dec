@@ -11,16 +11,13 @@ public class Validator {
         }
     }
 
-
     public boolean validateByNumber(String input) {  //Validate input for number
         if ((!input.equals("1")) && (!input.equals("0")) ) {
             System.out.println("ERROR: Invalid binary number, please write a valid binary number (0 or 1)");
             return true;
-
         } else { // if user write 1 or 0, all normal
             return false;
         }
-
     }
 
     public boolean validateByString(String input) {
@@ -31,6 +28,20 @@ public class Validator {
             return false;
         }
     }
+
+    public boolean validateIf(String input){
+        if (validateByEmpty(input)) {
+            return true;
+        }
+        if (validateByNumber(input)) {
+            return true;
+        }
+        if (validateByString(input)) {
+            return true;
+        }
+        return false;
+    }
+
 
 
 }

@@ -43,17 +43,9 @@ public class Bin2Dec {
                 System.out.print("\nBinary number " + (count + 1) + "/8: ");
                 String input = scanner.nextLine().trim();
 
-                if (validator.validateByEmpty(input)) {
-                    continue;
-                }
-
-                if (validator.validateByString(input)) {
-                    continue;
-                }
-
-                if (validator.validateByNumber(input)) {
-                    continue;
-                }
+               if(validator.validateIf(input)){
+                   continue;
+               }
 
                 count++;
             }
