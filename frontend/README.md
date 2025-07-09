@@ -1,3 +1,5 @@
+# React + TypeScript + Vite
+
 # This project uses the Feature-Sliced Design architecture.
 
 1. App — everything that makes the app run — routing, entrypoints, global styles, providers.
@@ -7,7 +9,18 @@
 5. Entities — business entities that the project works with, like user or product.
 6. Shared — reusable functionality, especially when it's detached from the specifics of the project/business, though not necessarily.
 
-# React + TypeScript + Vite
+# Mobile First Development
+1. This project follows the Mobile First approach — styles and layout are initially
+   optimized for small screen devices (e.g. smartphones),
+   and then progressively enhanced for larger screens (tablets, desktops) using media queries.
+
+# Styling
+1. This project uses Tailwind CSS for styling.
+2. All components and pages are built using utility classes and follow the Mobile First design approach.
+3. Tailwind is already configured in tailwind.config.js and used via @tailwind directives in global CSS.
+
+
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
