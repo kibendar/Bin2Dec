@@ -33,6 +33,16 @@ public class Validator {
         }
     }
 
+
+    public boolean validateByLength(String input) {
+        if (input.length() > 8) {
+            System.out.println(RED + "ERROR: Your number is too long, please write 8 characters" + RESET);
+            return true;
+        }else {
+            return false;
+        }
+    }
+
     public boolean validateIf(String input) {
 
         if (validateByEmpty(input)) {
@@ -43,6 +53,9 @@ public class Validator {
             return true;
         }
         if (validateByNumber(input)) {
+            return true;
+        }
+        if (validateByLength(input)) {
             return true;
         }
         return false;
