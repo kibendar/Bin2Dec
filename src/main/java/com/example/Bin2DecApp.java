@@ -25,19 +25,18 @@ public class Bin2DecApp {
         Input inputC = new Input();
 
 
-
 //            System.out.println("Enter binary number: ");
 
-            String inputMain = inputC.inputBinary();
+        String inputMain = inputC.inputBinary();
 
-            // create object 'convert' for Convertor
-            Convertor convert = new Bin2DecConvertor();
+        // create object 'convert' for Convertor
+        Convertor convert = new Bin2DecConvertor();
 
-            // create object 'app' for use the method run()
-            Bin2DecApp app = new Bin2DecApp(convert);
+        // create object 'app' for use the method run()
+        Bin2DecApp app = new Bin2DecApp(convert);
 
-            app.run(inputMain);
-        }
+        app.run(inputMain);
     }
+}
 
 

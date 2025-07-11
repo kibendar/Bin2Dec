@@ -12,16 +12,15 @@ public class Input {
         System.out.println("Input binary number(up to 8 characters): ");
 
 
-
         try {
-            while(true) {
+            while (true) {
 
 
                 String unCkeckedInput = scanner.nextLine();
 
-                if(validator.validateIf(unCkeckedInput)){
+                if (validator.validateIf(unCkeckedInput)) {
                     continue;
-                }else {
+                } else {
                     input = unCkeckedInput.toLowerCase();
                     break;
                 }
@@ -31,7 +30,6 @@ public class Input {
             e.printStackTrace();
             System.out.println("throws exeption");
         }
-
 
 
         return input;

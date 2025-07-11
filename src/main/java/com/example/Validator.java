@@ -38,7 +38,7 @@ public class Validator {
         if (input.length() != 8) {
             System.out.println(RED + "ERROR: Your number is too long or too small, please write 8 characters" + RESET);
             return true;
-        }else {
+        } else {
             return false;
         }
     }
