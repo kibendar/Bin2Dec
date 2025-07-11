@@ -16,7 +16,7 @@ public class Validator {
     }
 
     public boolean validateByNumber(String input) {  //Validate input for number
-        if ((!input.equals("1")) && (!input.equals("0"))) {
+        if (!input.matches("[01]+")) {
             System.out.println(RED + "ERROR: Invalid binary number, please write a valid binary number (0 or 1)" + RESET);
             return true;
         } else { // if user write 1 or 0, all normal
@@ -35,10 +35,10 @@ public class Validator {
 
 
     public boolean validateByLength(String input) {
-        if (input.length() > 8) {
-            System.out.println(RED + "ERROR: Your number is too long, please write 8 characters" + RESET);
+        if (input.length() != 8) {
+            System.out.println(RED + "ERROR: Your number is too long or too small, please write 8 characters" + RESET);
             return true;
-        }else {
+        } else {
             return false;
         }
     }
@@ -52,9 +52,11 @@ public class Validator {
         if (validateByString(input)) {
             return true;
         }
+
         if (validateByNumber(input)) {
             return true;
         }
+
         if (validateByLength(input)) {
             return true;
         }
