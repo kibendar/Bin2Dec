@@ -20,7 +20,7 @@ public class Input {
                 String unCkeckedInput = scanner.nextLine();
 
                 if(validator.validateIf(unCkeckedInput)){
-
+                    continue;
                 }else {
                     input = unCkeckedInput.toLowerCase();
                     break;
