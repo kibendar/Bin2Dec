@@ -1,8 +1,11 @@
-import { HomePage } from "@/pages/home";
+import { HomePage } from "@/pages";
+import MainLayout from "./layouts/MainLayout/MainLayout";
 
 function App() {
   return <>
-    <HomePage />
+    <MainLayout>
+      <HomePage />
+    </MainLayout>
   </>;
 }
 

@@ -19,6 +19,8 @@
 2. All components and pages are built using utility classes and follow the Mobile First design approach.
 3. Tailwind is already configured in tailwind.config.js and used via @tailwind directives in global CSS.
 
+# Icons
+1. Using the lucide
 
 
 
