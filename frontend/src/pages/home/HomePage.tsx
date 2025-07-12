@@ -1,3 +1,13 @@
+import { BinaryCalculator } from "@/widgets";
+import HomePageLayout from "./ui/layout/HomePageLayout";
+
 export function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <HomePageLayout
+      header={'h'}
+      footer={'f'}
+    >
+      <BinaryCalculator />
+    </HomePageLayout>
+  )
 }
