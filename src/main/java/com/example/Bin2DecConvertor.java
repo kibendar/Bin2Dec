@@ -8,22 +8,22 @@ package com.example;
  *  */
 public class Bin2DecConvertor implements Convertor {
 
-    @Override
-    //method for conversion from binary to decimal
-    public int convertBinToDec(String input) {
+  @Override
+  // method for conversion from binary to decimal
+  public int convertBinToDec(String input) {
 
-        //variable to convert binary from decimal
-        int decimal = 0;
+    // variable to convert binary from decimal
+    int decimal = 0;
 
-        //get parameter 'input', which contain a string of binary digits
-        //for-each for iteration of array of characters, which get from the string
-        for (char c : input.toCharArray()) {
+    // get parameter 'input', which contain a string of binary digits
+    // for-each for iteration of array of characters, which get from the string
+    for (char c : input.toCharArray()) {
 
-            //formula with ASCII trick*
-            decimal = decimal * 2 + (c - '0');
-        }
-
-        //return converted digits to decimal
-        return decimal;
+      // formula with ASCII trick*
+      decimal = decimal * 2 + (c - '0');
     }
+
+    // return converted digits to decimal
+    return decimal;
+  }
 }
