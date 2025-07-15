@@ -1,12 +1,18 @@
 import { HomePage } from "@/pages";
 import MainLayout from "./layouts/MainLayout/MainLayout";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "@/shared/api/queryClient";
 
 function App() {
-  return <>
-    <MainLayout>
-      <HomePage />
-    </MainLayout>
-  </>;
+  return (
+    <>
+      <QueryClientProvider client={queryClient}>
+        <MainLayout>
+          <HomePage />
+        </MainLayout>
+      </QueryClientProvider>
+    </>
+  );
 }
 
 export default App;
