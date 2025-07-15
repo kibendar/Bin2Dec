@@ -1,5 +1,5 @@
 import { NavHeader } from "@/shared/ui";
-import { Header } from "@/widgets";
+import { Header } from "@/widgets/Header";
 
 interface Props {
   children: React.ReactNode;
