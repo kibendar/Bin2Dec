@@ -1,4 +1,4 @@
-import LeftAction from "./ui/LeftAction";
+// import LeftAction from "./ui/LeftAction";
 import RightAction from "./ui/RightAction";
 
 export function Header() {
@@ -9,9 +9,10 @@ export function Header() {
           <div>
             <img src="/logo.svg" alt="" />
           </div>
-          <div className="hidden md:block">
+          {/* Uncomment if LeftAction is needed}
+          {/* <div className="hidden md:block">
             <LeftAction />
-          </div>
+          </div> */}
         </div>
         <RightAction />
       </div>
