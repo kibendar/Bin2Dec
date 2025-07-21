@@ -1,4 +1,4 @@
-import { AuthNavigation } from "@/shared/ui/authNavigation/AuthNavigation";
+// import { AuthNavigation } from "@/shared/ui/authNavigation/AuthNavigation";
 import { Menu } from "lucide-react";
 
 interface Props {
@@ -11,9 +11,10 @@ export default function RightAction({ className }: Props) {
       <div className="block md:hidden">
         <Menu />
       </div>
-      <div className="hidden md:block">
+      {/* Uncomment if AuthNavigation is needed */}
+      {/* <div className="hidden md:block">
         <AuthNavigation />
-      </div>
+      </div> */}
     </div>
   );
 }
