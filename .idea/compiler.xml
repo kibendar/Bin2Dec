@@ -13,4 +13,9 @@
       <module name="Bin2Dec" target="1.5" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="bin-2-dec" options="-parameters" />
+    </option>
+  </component>
 </project>
