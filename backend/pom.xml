@@ -19,17 +19,6 @@
   </dependencies>
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.2.0</version>
-        <configuration>
-          <mainClass>com.example.Bin2DecApp</mainClass>
-          <arguments>
-            <argument>argument1</argument>
-          </arguments>
-        </configuration>
-      </plugin>
       <!-- Compiler plugin to set Java version -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -38,19 +27,6 @@
         <configuration>
           <source>21</source>
           <target>21</target>
-        </configuration>
-      </plugin>
-      <!-- JAR plugin to set the main class -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.3.0</version>
-        <configuration>
-          <archive>
-            <manifest>
-              <mainClass>com.example.Bin2DecApp</mainClass>
-            </manifest>
-          </archive>
         </configuration>
       </plugin>
       <plugin>
